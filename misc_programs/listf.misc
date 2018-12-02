@@ -1,0 +1,23 @@
+def f(x:Int):Unit={
+	printInt(x*x);
+	printChar(10);
+};
+
+def g(y:Int):Unit={
+	printInt(y*y*y);
+	printChar(10);
+};
+
+def h(z:Int):Unit={
+	printInt(z*z*z*z);
+	printChar(10);
+};
+
+def test(l:List[(Int)Unit],x:Int):Unit={
+	while(!isEmpty(l)){
+		head(l)(x);
+		l=tail(l);
+	};
+};
+
+test([f,g,h],readInt())

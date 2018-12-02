@@ -1,0 +1,7 @@
+def length(l:List[Int]):Int=
+ if(isEmpty(l))
+  	0
+ else
+ 	1+length(tail(l));
+
+printInt(length([1,2,3,4,5]))

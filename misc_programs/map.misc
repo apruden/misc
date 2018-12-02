@@ -1,0 +1,11 @@
+def map(f:(Int)Int,l:List[Int]):List[Int] =
+ if (isEmpty(l))
+    []
+ else
+    f(head(l))::map(f,tail(l));
+
+def square(x:Int):Int={
+	printInt(x*x);
+	x*x
+};
+map(square,[1,2,3,4,5])

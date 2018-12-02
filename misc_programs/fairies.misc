@@ -1,0 +1,41 @@
+// There are 100 christmas lights in a row; special lights which
+// toggle if pressed. Initially they are all off. The 100 christmas
+// fairies pass by: the first one jumps on every light (making it
+// toggle), the second jumps on every second light, the third fairy
+// jumps on every third light, and so on.
+// 
+// How many lights are on after the 100th fairy has passed?
+
+
+def fairy_loop (i: Int, n: Int, l: List[Int]): List[Int]  =
+  if (isEmpty (l))
+    []
+  else {
+    var light: Int = head (l);
+    (if (i % n == 0) !light else light) :: fairy_loop (i+1, n, tail (l))
+  };
+
+def fairy (n: Int, lights: List[Int]): List[Int] =
+  fairy_loop (1, n, lights);
+
+def lights (state: Int, n: Int): List[Int] =
+  if (n == 0) [] else state :: lights (state, n - 1);
+
+def fairies_loop (lights: List[Int], n: Int): List[Int] =
+  if (n == 0) lights else fairies_loop (fairy (n, lights), n-1);
+
+def fairies (n: Int): List[Int] = {
+  var lights: List[Int] = lights (0, n);
+  fairies_loop (lights, n)
+};
+
+def fold (f: (Int, Int) Int, init: Int, l: List[Int]): Int =
+  if (isEmpty (l))
+    init
+  else
+    fold (f, f (init, head (l)), tail (l));
+
+def count_lights (count: Int, light: Int): Int =
+  count + (if (light) 1 else 0);
+
+printInt (fold (count_lights, 0, fairies (100)))

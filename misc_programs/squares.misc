@@ -1,0 +1,22 @@
+// Programme calculant la somme des carrés de 1 à 20 :
+// 1^2 + 2^2 + 3^2 + ... + 20^2
+// $Id: squares.misc,v 1.1 2002/11/01 11:47:23 paltherr Exp $
+def identity (x: Int): Int = x;
+def tabulate (first: Int, last: Int, f: (Int) Int): List[Int]  =
+  if (first > last)
+    []
+  else
+    f (first) :: tabulate (first + 1, last, f);
+def map (f: (Int) Int , l: List[Int]): List[Int] =
+  if (isEmpty (l))
+    []
+  else
+    f (head (l)) :: map (f, tail (l));
+def fold (f: (Int, Int) Int, init: Int, l: List[Int]): Int  =
+  if (isEmpty (l))
+    init
+  else
+    fold (f, f (init, head (l)), tail (l));
+def plus (x: Int, y: Int): Int = x + y;
+def square (x: Int): Int = x*x;
+printInt (fold (plus, 0, map (square, tabulate (1, 20, identity))))

@@ -1,0 +1,2 @@
+def sum(x:Int,y:Int):Int= x+y;
+printInt(sum(32767,-1))

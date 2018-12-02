@@ -1,0 +1,7 @@
+def compose(f:(Int)Int,g:(Int)Int,x:Int):Int=f(g(x));
+
+def square(x:Int):Int=x*x;
+
+def succ(x:Int):Int = x+1;
+
+printInt(compose(square,succ,5))

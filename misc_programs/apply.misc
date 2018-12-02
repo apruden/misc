@@ -1,0 +1,5 @@
+def apply(f:(Int)Int,x:Int):Int = f(x);
+
+def square(x:Int):Int = x*x;
+
+printInt(apply(square,5))

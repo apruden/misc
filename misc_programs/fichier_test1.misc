@@ -1,0 +1,11 @@
+def visualiceSum (N:Int):Int ={
+  var i: Int = 1;
+  var sum: Int = 0;
+  while (i<=N){
+	sum = sum + i;
+	i= i + 1;
+  };
+  sum
+};
+
+printInt (visualiceSum(10))

@@ -1,0 +1,8 @@
+// Fonction factorielle
+// $Id: fact.misc,v 1.1 2002/11/01 11:47:24 paltherr Exp $
+def fact (x: Int): Int =
+  if (x == 0)
+    1
+  else
+    x * fact (x - 1);
+printInt (fact (5))

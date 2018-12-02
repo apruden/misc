@@ -1,0 +1,20 @@
+def visualiceSumPairs (N:List[Int]):Int = {
+  var sum: Int = 0;
+  var valeur: Int = 0;
+
+  if (isEmpty(N))
+	0	
+  else{
+     valeur =  head (N);
+     if ((valeur% 2)==0) {
+	sum = sum + valeur;
+	printInt (head(N));
+	printChar (10);
+     };
+     sum = sum + visualiceSumPairs (tail(N));
+     sum
+  };
+  sum
+};
+
+printInt (visualiceSumPairs([1,2,3,4,5,6,7,8,9,10]))

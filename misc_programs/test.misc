@@ -1,0 +1,7 @@
+def fact(x:Int):Int={
+	var y:Int = 9;
+	y=8;
+	x=y;
+	x
+};
+fact(1)

@@ -1,0 +1,15 @@
+def visualiceSumPairs (N:Int):Int = {
+  var i: Int = 1;
+  var sum: Int = 0;
+  while (i<=N){
+	if ((i % 2)==0){
+		sum = sum + i;
+		printInt(i);
+		printChar (10);
+	};
+	i = i + 1;
+  };
+  sum
+};
+
+printInt (visualiceSumPairs(10))
